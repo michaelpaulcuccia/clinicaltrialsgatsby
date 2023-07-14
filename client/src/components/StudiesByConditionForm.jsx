@@ -48,7 +48,8 @@ export default function StudiesByConditionForm() {
       <Box>
         <label>Search by Condition</label>
         <input type='text' value={data} onChange={(event) => setData(event.target.value)} />
-        <Button onClick={handleClick}>Click to see studies</Button>
+        {/* <Button onClick={handleClick}>Click to see studies</Button> */}
+        <button onClick={handleClick}>Click to see studies</button>
       </Box>
       {
         showStudies &&
