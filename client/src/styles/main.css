@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.button-one {
+    background-color: #8383e9;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 3px;
+}
+
+.button-one:hover {
+    background-color: #4040ee;
+}

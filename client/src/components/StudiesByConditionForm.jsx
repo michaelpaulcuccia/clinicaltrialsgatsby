@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import Button from './Button';
 import StudyText from './StudyText';
 import { getStudiesByCondition } from '../lib/dataFetching';
 
@@ -24,6 +23,7 @@ const Box = styled.div`
   }
 `;
 
+
 export default function StudiesByConditionForm() {
 
     const [conditionStudies, setConditionStudies] = useState([]);
@@ -43,20 +43,26 @@ export default function StudiesByConditionForm() {
         
     }
 
+    const handleClear = () => {
+      setShowStudies(!showStudies);
+    }
+
   return (
     <Container>
       <Box>
         <label>Search by Condition</label>
         <input type='text' value={data} onChange={(event) => setData(event.target.value)} />
-        {/* <Button onClick={handleClick}>Click to see studies</Button> */}
-        <button onClick={handleClick}>Click to see studies</button>
+        <button className='button-one' onClick={handleClick}>Click to see studies</button>
       </Box>
       {
-        showStudies &&
+        showStudies && 
         conditionStudies.map((items, i) => (
-          <StudyText key={i}>{items.BriefTitle}, <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></StudyText>
+          <StudyText key={i}>{items.BriefTitle} <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></StudyText>
         ))
-
+      }
+      {
+        showStudies &&
+        <button className='button-one' onClick={handleClear}>Clear Form</button>
       }
     </Container>
   )

@@ -6,8 +6,24 @@ export async function getStudiesByCondition(arg) {
 
     const data = await res.json();
 
-    const studyFields = data.StudyFieldsResponse.StudyFields;
+    console.log(data)
 
-    return studyFields;
+    if (data.StudyFieldsResponse.NStudiesFound === 0 || data.StudyFieldsResponse.NStudiesReturned === 0) {
+
+        let arr = [
+            {
+                BriefTitle: `No Studies were found for ${arg}`,
+                NCTId: ''
+            }
+        ];
+
+        return arr;
+
+    } else {
+
+        const studyFields = data.StudyFieldsResponse.StudyFields;
+        return studyFields;
+        
+    }
 
 }
