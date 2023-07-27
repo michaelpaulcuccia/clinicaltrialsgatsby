@@ -9,17 +9,18 @@ const Wrapper = styled.div`
 
 const Root = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: ${colors.offWhite};
   padding-top: 40px;
   padding-bottom: 60px;
+  padding-right: 6px;
   max-width: 1040px;
   margin: 0 auto;
 `;
 
 const StyledText = styled.span`
   font-weight: bold;
-  color: ${colors.lightBlue};
+  color: ${colors.strongBlue};
   font-size: 22px;
   line-height: 2.25rem;
 `;

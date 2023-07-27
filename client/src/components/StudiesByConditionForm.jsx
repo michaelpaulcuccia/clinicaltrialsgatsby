@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { getStudiesByCondition } from '../lib/dataFetching';
+import ReturnStudiesContainer from './ReturnStudiesContainer';
+import ReturnStudiesText from './ReturnStudiesText';
 
 const Box = styled.div`
 
@@ -53,9 +55,26 @@ export default function StudiesByConditionForm() {
       </Box>
       {
         showStudies && 
-        conditionStudies.map((items, i) => (
-          <div key={i}>{items.BriefTitle} <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></div>
-        ))
+        <ReturnStudiesContainer>
+          {
+            conditionStudies.map((items, i) => (
+              <ReturnStudiesText key={i}>
+                <span className='title'>{i + 1}.{" "}{items.BriefTitle} </span>
+                <br/>
+                {
+                  items.Condition !== '' ? <span>Condition: {items.Condition}</span> : null
+                }
+                <br/>
+                {
+                  items.NCTId !== '' ? <span className='more-info'>For More Information:{" "} 
+                  <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></span>
+                  : null
+                }
+                </ReturnStudiesText>
+            ))
+          }
+        </ReturnStudiesContainer>
+       
       }
       {
         showStudies &&

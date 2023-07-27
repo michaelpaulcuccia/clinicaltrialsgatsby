@@ -20,7 +20,7 @@ const Root = styled.div`
     .navItems {
         -webkit-font-smoothing: antialiased;
         line-height: 1.25rem;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .burgerContainer {
@@ -63,7 +63,7 @@ const LeftNavItem = styled.div`
 
     .bottom {
         font-weight: 300;
-        color: ${colors.lightBlue};
+        color: ${colors.strongBlue};
     }
 `;
 
@@ -75,14 +75,14 @@ const OverlayMenu = styled.div`
         position: absolute;
         height: calc(100% - 80px);
         width: 100%;
-        color: white;
-        background-color: black;
+        background-color: white;
         top: 80px;
         right: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         padding-top: 30px;
+        padding-left: 18px;
         z-index: 1;
 
         .navItems {

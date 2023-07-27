@@ -13,7 +13,8 @@ export async function getStudiesByCondition(arg) {
         let arr = [
             {
                 BriefTitle: `No Studies were found for ${arg}`,
-                NCTId: ''
+                NCTId: '',
+                Condition: ''
             }
         ];
 

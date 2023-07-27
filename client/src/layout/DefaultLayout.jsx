@@ -6,9 +6,8 @@ export default function DefaultLayout({children}) {
     <>
       <Nav/>
         <div>
-        {children}
-      </div>
+          {children}
+        </div>
     </>
-
   )
 }
