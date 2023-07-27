@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../constants'
 
 const Root = styled.div`
     background-color: #FAF9F6;
@@ -9,16 +10,22 @@ const Root = styled.div`
     justify-content: space-between;
 
     div {
+
         &:not(:first-child) {
             text-align: center;
+            //HIDES ALL DESKTOP NAV ITEMS EXCEPT FOR LEFT NAV ITEM
+            @media (max-width: ${breakpoints.navBarMobileBreak}) {
+                display: none;
+            }
         }
         &:first-child {
             padding-left: 5px;
         }
         &:last-child {
             padding-right: 5px;
-        }
+        }       
     }
+
 `;
 
 const LeftNavItem = styled.div`
@@ -36,3 +43,5 @@ export default function Nav() {
     </Root>
   )
 }
+
+//TO DO - show Hamburger on Mobile View
