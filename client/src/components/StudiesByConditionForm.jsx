@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import StudyText from './StudyText';
 import { getStudiesByCondition } from '../lib/dataFetching';
 
 const Box = styled.div`
 
   display: flex;
   align-items: center;
+  padding-top: 30px;
   padding-bottom: 10px;
 
   label {
-    font-size: 18px;
-    line-height: 20px;
-    font-weight: 600;
     padding-right: 5px;
+    padding-left: 5px;
   }
 
   input {
-    border-radius: 2px;
     margin-right: 5px;
   }
 `;
@@ -57,7 +54,7 @@ export default function StudiesByConditionForm() {
       {
         showStudies && 
         conditionStudies.map((items, i) => (
-          <StudyText key={i}>{items.BriefTitle} <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></StudyText>
+          <div key={i}>{items.BriefTitle} <a target='_blank' rel="noreferrer" href={`https://classic.clinicaltrials.gov/ct2/show/${items.NCTId}`}>{items.NCTId}</a></div>
         ))
       }
       {

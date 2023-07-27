@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { maxWidth } from '../constants';
 
 const Root = styled.div`
-  max-width: 1040px;
+  max-width: ${maxWidth};
   margin-left: auto;
   margin-right: auto;
 `;

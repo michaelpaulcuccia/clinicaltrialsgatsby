@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
-import { breakpoints } from '../constants';
+import { breakpoints, maxWidth, colors } from '../constants';
 
 const Wrapper = styled.div`
     width: 100vw;
-    background-color: #FAF9F6;
+    background-color: ${colors.offWhite};
 `;
 
 const Root = styled.div`
-    max-width: 1040px;
+    max-width: ${maxWidth};
     margin: 0 auto;
-    background-color: #FAF9F6;
+    background-color: ${colors.offWhite};
     height: 80px;
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@ const LeftNavItem = styled.div`
 
     .bottom {
         font-weight: 300;
-        color: #0077b6;
+        color: ${colors.lightBlue};
     }
 `;
 
@@ -83,6 +83,7 @@ const OverlayMenu = styled.div`
         flex-direction: column;
         align-items: center;
         padding-top: 30px;
+        z-index: 1;
 
         .navItems {
             -webkit-font-smoothing: antialiased;

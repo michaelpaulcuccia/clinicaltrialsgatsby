@@ -4,8 +4,9 @@ import { breakpoints } from '../constants';
 import { StaticImage } from "gatsby-plugin-image";
 
 const Root = styled.div`
+  margin: 0 auto;
     @media (max-width: ${breakpoints.navBarMobileBreak}) {
-        padding: 0 5px;
+      padding: 0 5px;
     } 
 `;
 
