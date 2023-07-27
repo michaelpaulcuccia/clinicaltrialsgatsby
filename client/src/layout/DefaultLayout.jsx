@@ -4,9 +4,12 @@ import Nav from './Nav';
 
 export default function DefaultLayout({children}) {
   return (
-    <Container>
-        <Nav/>
+    <>
+      <Nav/>
+        <Container>
         {children}
-    </Container>
+      </Container>
+    </>
+
   )
 }

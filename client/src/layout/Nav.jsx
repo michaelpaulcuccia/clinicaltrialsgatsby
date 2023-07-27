@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 import { breakpoints } from '../constants';
 
+const Wrapper = styled.div`
+    width: 100vw;
+    background-color: #FAF9F6;
+`;
+
 const Root = styled.div`
+    max-width: 1040px;
+    margin: 0 auto;
     background-color: #FAF9F6;
     height: 80px;
     display: flex;
@@ -51,10 +58,12 @@ const LeftNavItem = styled.div`
         font-style: oblique;
         letter-spacing: 6px;
         font-size: 18px;
+        
     }
 
     .bottom {
-        font-weight: 400;
+        font-weight: 300;
+        color: #0077b6;
     }
 `;
 
@@ -96,10 +105,10 @@ export default function Nav() {
     }
 
   return (
-    <>
+    <Wrapper>
         <Root>
             <LeftNavItem>
-                <span className='top'>Antigrafo</span><br/><span className='bottom'>Clinical Trials</span>
+                <span className='top'>Antigrafo</span><br/><span className='bottom'>clinical trials</span>
             </LeftNavItem>
             <div className='navItems'>What Are <br/>Clinical Trials</div>
             <div className='navItems'>Why <br/>Participate</div>
@@ -123,7 +132,7 @@ export default function Nav() {
                 <div className='navItems'>Rare Disease Research</div>
             </OverlayMenu>
         }
-    </>
+    </Wrapper>
 
   )
 }
