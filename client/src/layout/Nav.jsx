@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../constants';
-import burgerImage from '../../public/assets/burger-menu.svg';
+//import burgerImage from '../../public/assets/burger-menu.svg';
 
 const Root = styled.div`
     background-color: #FAF9F6;
@@ -112,7 +112,7 @@ export default function Nav() {
             <div className='navItems'>Oncology <br/>Research</div>
             <div className='navItems'>Rare Disease <br/>Research</div>
             <div className='burgerContainer'>
-                <img src={burgerImage} alt='' onClick={handleHamburgerClick}/>
+                {/* <img src={burgerImage} alt='' onClick={handleHamburgerClick}/> */}
             </div>
         </Root>
         {
