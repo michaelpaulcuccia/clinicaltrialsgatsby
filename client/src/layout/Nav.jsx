@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { breakpoints } from '../constants';
-//import burgerImage from '../../public/assets/burger-menu.svg';
 
 const Root = styled.div`
     background-color: #FAF9F6;
@@ -23,12 +23,6 @@ const Root = styled.div`
        
         @media (max-width: ${breakpoints.navBarMobileBreak}) {
             display: block;
-            z-index: 2;
-            img {
-                height: 32px;
-                width: 32px;
-
-            }
         }        
     }
 
@@ -111,8 +105,13 @@ export default function Nav() {
             <div className='navItems'>Why <br/>Participate</div>
             <div className='navItems'>Oncology <br/>Research</div>
             <div className='navItems'>Rare Disease <br/>Research</div>
-            <div className='burgerContainer'>
-                {/* <img src={burgerImage} alt='' onClick={handleHamburgerClick}/> */}
+            <div className='burgerContainer' onClick={handleHamburgerClick}>
+                <StaticImage 
+                    src='../images/burger-menu.svg' 
+                    height={32}
+                    width={32}
+                    alt='' 
+                />
             </div>
         </Root>
         {
