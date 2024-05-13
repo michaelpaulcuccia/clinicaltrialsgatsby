@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../constants';
+import { colors, breakpoints } from '../constants';
 
 const Wrapper = styled.div`
-    width: 100vw;
-    background-color: ${colors.offWhite};
+  width: 100vw;
+  background-color: ${colors.offWhite};
+
+  @media (max-width: ${breakpoints.navBarMobileBreak}) {
+    padding-left: 10px;
+  } 
 `;
 
 const Root = styled.div`

@@ -4,22 +4,63 @@ import Container from './Container';
 import { getStudiesByCondition } from '../lib/dataFetching';
 import ReturnStudiesContainer from './ReturnStudiesContainer';
 import ReturnStudiesText from './ReturnStudiesText';
+import { breakpoints } from '../constants';
 
 const Box = styled.div`
-
   display: flex;
   align-items: center;
-  padding-top: 30px;
   padding-bottom: 10px;
+
+  @media (max-width: ${breakpoints.navBarMobileBreak}) {
+      justify-content: space-evenly;
+    } 
 
   label {
     padding-right: 5px;
     padding-left: 5px;
+
+    @media (max-width: ${breakpoints.navBarMobileBreak}) {
+      padding-right: 0;
+      max-width: 90px;
+    } 
   }
 
   input {
     margin-right: 5px;
   }
+
+  .button-one {
+  background-color: #0077b6;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 3px;
+
+  @media (max-width: ${breakpoints.navBarMobileBreak}) {
+      padding: 3px 6px;
+      max-width: 90px;
+    } 
+
+  &:hover {
+    background-color: #0068b6;
+  }
+}
+`;
+
+const StyledButton = styled.button`
+  background-color: #0077b6;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 3px; 
+
+
+  &:hover {
+    background-color: #0068b6;
+  }
+
+  @media (max-width: ${breakpoints.navBarMobileBreak}) {
+      margin-left: 8px;
+      margin-bottom: 16px;
+    }
 `;
 
 
@@ -30,7 +71,6 @@ export default function StudiesByConditionForm() {
     const [showStudies, setShowStudies] = useState(false);
 
     const handleClick =  async () => {
-      console.log('click')
 
       if (data !== '') {
         const res = await getStudiesByCondition(data);
@@ -78,7 +118,7 @@ export default function StudiesByConditionForm() {
       }
       {
         showStudies &&
-        <button className='button-one' onClick={handleClear}>Clear Form</button>
+        <StyledButton onClick={handleClear}>Clear Form</StyledButton>
       }
     </Container>
   )

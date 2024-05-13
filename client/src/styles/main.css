@@ -10,16 +10,3 @@ html {
     font-family: 'Inter', sans-serif; 
     color: rgb(30, 40, 70);
 }
-
-.button-one {
-    background-color: #0077b6;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 3px;
-}
-
-.button-one:hover {
-    background-color: #0068b6;
-}
-
-

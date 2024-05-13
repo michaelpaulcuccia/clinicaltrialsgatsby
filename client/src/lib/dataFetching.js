@@ -6,8 +6,6 @@ export async function getStudiesByCondition(arg) {
 
     const data = await res.json();
 
-    console.log(data)
-
     if (data.StudyFieldsResponse.NStudiesFound === 0 || data.StudyFieldsResponse.NStudiesReturned === 0) {
 
         let arr = [
